@@ -11,7 +11,7 @@ bot(
   async (message) => {
     const userId = message.sender.id;
     const lastRestart = userLastRestart.get(userId) || 0;
-    const cooldownPeriod = 60 * 60 * 1000; // 1 hour cooldown
+    const cooldownPeriod = 60 * 1000; // 1 hour cooldown
 
     if (Date.now() - lastRestart < cooldownPeriod) {
       await message.send('You can only restart the bot once per hour.');
